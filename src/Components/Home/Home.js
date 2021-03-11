@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-// import banner from '../../photo/Banner.jpg';
 import './Home.css';
 
 const Home = () => {

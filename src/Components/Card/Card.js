@@ -23,14 +23,16 @@ const Card = (props) => {
             .then(data => setLeague(data.leagues[0]))
     }, [idLeague])
 
+    const {strBadge, strSport} = league;
+
     return (
         <div className="container homeBackground" onClick={() => showLeague(idLeague)}>
             <div className="leagueCard">
-                <img src={league.strBadge} alt="" />
+                <img src={strBadge} alt="" />
                 <br />
-                <div className="leagueName">
+                <div className="leagueName fontColor">
                     <h3 >{strLeague}</h3>
-                    <p>Sport type: {league.strSport}</p>
+                    <p>Sport type: {strSport}</p>
                     <button
                         className="btn btn-primary explore-btn"
                         onClick={() => showLeague(idLeague)}>

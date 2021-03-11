@@ -20,14 +20,20 @@ const League = () => {
             .then(data => setLeague(data.leagues[0]))
     }, [id])
 
+    const {strGender, strBanner, strLogo, strCountry, intFormedYear, strLeague, strSport, strDescriptionEN, strDescriptionES} = league;
+
     let gender;
     let genderImg;
     if (league.strGender === 'Male') {
-        gender = <p><FontAwesomeIcon className="mr-2" icon={faMars} />Gender : {league.strGender}</p>
+        gender = <p><FontAwesomeIcon className="mr-2" icon={faMars} />Gender : {strGender}</p>
         genderImg = <img className="genderImg" src={malePic} alt="" />
     }
     if (league.strGender === 'Female') {
-        gender = <p><FontAwesomeIcon className="mr-2" icon={faVenus} />Gender : {league.strGender}</p>
+        gender = <p><FontAwesomeIcon className="mr-2" icon={faVenus} />Gender : {strGender}</p>
+        genderImg = <img className="genderImg" src={femalePic} alt="" />
+    }
+    if (league.strGender === 'Mixed') {
+        gender = <p><FontAwesomeIcon className="mr-2" icon={faVenus} /><FontAwesomeIcon className="mr-2" icon={faVenus} />Gender : {strGender}</p>
         genderImg = <img className="genderImg" src={femalePic} alt="" />
     }
 
@@ -35,22 +41,22 @@ const League = () => {
         backgroundRepeat: "noRepeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundImage: `url(${league.strBanner})`
+        backgroundImage: `url(${strBanner})`
     }
 
     return (
         
         <div>
             <div style={banner} className="detailsBanner">
-                <img className="logo w-25" src={league.strLogo} alt="" />
+                <img className="logo w-25" src={strLogo} alt="" />
             </div>
             <div className="container LeagueBackground">
                 <div className="LeagueInfo d-flex">
                     <div>
-                        <h3>{league.strLeague}</h3>
-                        <p><FontAwesomeIcon className="mr-2" icon={faPodcast} />Founded: {league.intFormedYear}</p>
-                        <p><FontAwesomeIcon className="mr-2" icon={faFlag} />County: {league.strCountry}</p>
-                        <p><FontAwesomeIcon className="mr-2" icon={faFutbol} />Sport Type: {league.strSport}</p>
+                        <h3>{strLeague}</h3>
+                        <p><FontAwesomeIcon className="mr-2" icon={faPodcast} />Founded: {intFormedYear}</p>
+                        <p><FontAwesomeIcon className="mr-2" icon={faFlag} />County: {strCountry}</p>
+                        <p><FontAwesomeIcon className="mr-2" icon={faFutbol} />Sport Type: {strSport}</p>
                         {
                             gender
                         }
@@ -62,8 +68,8 @@ const League = () => {
                     </div>
                 </div>
                 <br />
-                <p>{league.strDescriptionEN}</p>
-                <p>{league.strDescriptionES}</p>
+                <p>{strDescriptionEN}</p>
+                <p>{strDescriptionES}</p>
             </div>
             <div className="socialIcon mb-3">
                 <br />

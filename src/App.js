@@ -12,7 +12,6 @@ import League from './Components/League/League';
 function App() {
 
   return (
-
     <Router>
       <Switch>
         <Route exact path ="/">
