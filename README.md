@@ -1,6 +1,7 @@
       Explore Soccer Leagues
       
-==> Live: 
+      
+==> Live: https://explore-soccer-league.netlify.app
 
 ==> This is a website about "different soccer leagues".
 
