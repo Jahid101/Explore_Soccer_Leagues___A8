@@ -1,0 +1,18 @@
+.leagueCard{
+    background-color: rgb(61, 141, 8);
+    width: 320px;
+    margin: 15px;
+    float: left;
+    padding-right: 0;
+    height: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 40px 20px greenyellow;
+}
+.leagueCard img{
+    padding: 15px;
+    width: 300px;
+    height: 280px;
+}
+.leagueName{
+    padding: 25px;
+}
