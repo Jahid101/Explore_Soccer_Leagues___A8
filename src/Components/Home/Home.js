@@ -6,19 +6,26 @@ const Home = () => {
 
     const [leagues, setLeagues] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const url = 'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php';
         fetch(url)
-        .then(res => res.json())
-        .then(data => setLeagues(data.leagues.slice(0,21)))
+            .then(res => res.json())
+            .then(data => setLeagues(data.leagues.slice(0,21)))
     }, [])
 
     return (
-        <div>
-            <h1 className="banner bannerName"><strong>Explore Soccer Leagues</strong></h1>
-            {
-                leagues.map(league => <Card league = {league}></Card>)
-            }
+        <div className="fluid-container">
+            <div>
+                <h1 className="banner bannerName"><strong>Explore Soccer Leagues</strong></h1>
+            </div>
+            <div className="row m-0">
+                {
+                    leagues.map(league =>
+                        <div className="col-lg-4 col-md-6 col-sm-12">
+                            <Card league={league}></Card>
+                        </div>)
+                }
+            </div>
         </div>
     );
 };

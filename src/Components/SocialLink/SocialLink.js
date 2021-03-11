@@ -13,7 +13,7 @@ const SocialLink = (props) => {
 
     return (
         
-        <div className="">
+        <div className="d-flex justify-content-center">
             <a href={urlFacebook} target="_blank" rel="noopener noreferrer">
                 <img src={facebook} alt="" />
             </a>

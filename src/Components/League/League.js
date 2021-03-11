@@ -20,21 +20,21 @@ const League = () => {
             .then(data => setLeague(data.leagues[0]))
     }, [id])
 
-    const {strGender, strBanner, strLogo, strCountry, intFormedYear, strLeague, strSport, strDescriptionEN, strDescriptionES} = league;
+    const { strGender, strBanner, strLogo, strCountry, intFormedYear, strLeague, strSport, strDescriptionEN, strDescriptionES } = league;
 
     let gender;
     let genderImg;
     if (league.strGender === 'Male') {
         gender = <p><FontAwesomeIcon className="mr-2" icon={faMars} />Gender : {strGender}</p>
-        genderImg = <img className="genderImg" src={malePic} alt="" />
+        genderImg = <img className="genderImg w-100" src={malePic} alt="" />
     }
-    if (league.strGender === 'Female') {
+    else if (league.strGender === 'Female') {
         gender = <p><FontAwesomeIcon className="mr-2" icon={faVenus} />Gender : {strGender}</p>
-        genderImg = <img className="genderImg" src={femalePic} alt="" />
+        genderImg = <img className="genderImg w-100" src={femalePic} alt="" />
     }
-    if (league.strGender === 'Mixed') {
+    else if (league.strGender === 'Mixed') {
         gender = <p><FontAwesomeIcon className="mr-2" icon={faVenus} /><FontAwesomeIcon className="mr-2" icon={faVenus} />Gender : {strGender}</p>
-        genderImg = <img className="genderImg" src={femalePic} alt="" />
+        genderImg = <img className="genderImg w-100" src={femalePic} alt="" />
     }
 
     const banner = {
@@ -45,33 +45,41 @@ const League = () => {
     }
 
     return (
-        
+
         <div>
-            <div style={banner} className="detailsBanner">
-                <img className="logo w-25" src={strLogo} alt="" />
+            <div style={banner}>
+                <div className="container text-center" >
+                    <div>
+                        <img className="w-50 mb-5 mt-5 img-fluid logo" src={strLogo} alt="" />
+                    </div>
+                </div>
             </div>
             <div className="container LeagueBackground">
-                <div className="LeagueInfo d-flex">
-                    <div>
-                        <h3>{strLeague}</h3>
-                        <p><FontAwesomeIcon className="mr-2" icon={faPodcast} />Founded: {intFormedYear}</p>
-                        <p><FontAwesomeIcon className="mr-2" icon={faFlag} />County: {strCountry}</p>
-                        <p><FontAwesomeIcon className="mr-2" icon={faFutbol} />Sport Type: {strSport}</p>
-                        {
-                            gender
-                        }
-                    </div>
-                    <div>
-                        {
-                            genderImg
-                        }
+                <div className="LeagueInfo">
+                    <div className="row">
+                        <div className="col-md-8 col-sm-12">
+                            <h3>{strLeague}</h3>
+                            <p><FontAwesomeIcon className="mr-2" icon={faPodcast} />Founded: {intFormedYear}</p>
+                            <p><FontAwesomeIcon className="mr-2" icon={faFlag} />County: {strCountry}</p>
+                            <p><FontAwesomeIcon className="mr-2" icon={faFutbol} />Sport Type: {strSport}</p>
+                            {
+                                gender
+                            }
+                        </div>
+                        <div className="col-md-4 col-sm-12">
+                            <div>
+                                {
+                                    genderImg
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br />
                 <p>{strDescriptionEN}</p>
                 <p>{strDescriptionES}</p>
             </div>
-            <div className="socialIcon mb-3">
+            <div className="socialIcon">
                 <br />
                 {
                     <SocialLink lg={league}></SocialLink>

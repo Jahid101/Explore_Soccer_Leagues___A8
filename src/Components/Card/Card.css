@@ -1,6 +1,6 @@
 .leagueCard{
     background-color: rgb(61, 141, 8);
-    width: 320px;
+    width: 350px;
     margin: 15px;
     float: left;
     padding-right: 0;
@@ -16,6 +16,7 @@
 .leagueName{
     padding: 25px;
 }
+
 .fontColor{
     color: white;
 }

@@ -23,7 +23,7 @@ const Card = (props) => {
             .then(data => setLeague(data.leagues[0]))
     }, [idLeague])
 
-    const {strBadge, strSport} = league;
+    const { strBadge, strSport } = league;
 
     return (
         <div className="container homeBackground" onClick={() => showLeague(idLeague)}>
