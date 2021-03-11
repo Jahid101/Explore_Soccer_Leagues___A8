@@ -26,7 +26,7 @@ const Card = (props) => {
     const { strBadge, strSport } = league;
 
     return (
-        <div className="container homeBackground" onClick={() => showLeague(idLeague)}>
+        <div className="container homeBackground">
             <div className="leagueCard">
                 <img src={strBadge} alt="" />
                 <br />
